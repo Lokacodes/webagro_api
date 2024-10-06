@@ -1,0 +1,162 @@
+### ==== KEUANGAN -> PANEN
+
+### GET
+GET http://localhost:8000/api/keuangan/panen
+
+### GET /{id}
+GET http://localhost:8000/api/keuangan/panen/{id}
+
+### POST
+POST http://localhost:8000/api/keuangan/panen
+Content-Type: application/json
+
+{
+    "nama":"Panen 1",
+    "id_panen":"panen2@122",
+    "tanggal_tanam":"2023-01-01",
+    "tanggal_panen":"2024-01-01"
+}
+
+### PUT /{id}
+PUT http://localhost:8000/api/keuangan/panen/{id}
+Content-Type: application/json
+
+{
+    "nama":"Panen 1#",
+    "id_panen":"panen1@122",
+    "tanggal_tanam":"2023-01-01",
+    "tanggal_panen":"2024-01-01"
+}
+
+### DELETE /{id}
+DELETE http://localhost:8000/api/keuangan/panen/{id}
+
+
+### ==== KESEHATAN -> MENU ADMIN
+
+### GET
+GET http://localhost:8000/api/kesehatan/admin
+
+### GET /{id}
+GET http://localhost:8000/api/kesehatan/admin/{id}
+
+### POST
+POST http://localhost:8000/api/kesehatan/admin
+Content-Type: application/json
+
+{
+    "nama":"Elysia Dev",
+    "username":"elysia@dev",
+    "password":"password"
+}
+
+### PUT /{id}
+PUT http://localhost:8000/api/kesehatan/admin/{id}
+Content-Type: application/json
+
+{
+    "nama":"Elysia Dev",
+    "username":"elysia@dev",
+    "password":"password"
+}
+
+### DELETE /{id}
+DELETE http://localhost:8000/api/kesehatan/admin/{id}
+
+
+### ==== ABSENSI -> PEGAWAI
+
+### GET
+GET http://localhost:8000/api/absensi/pegawai
+
+### GET /{id}
+GET http://localhost:8000/api/absensi/pegawai/{id}
+
+### POST
+POST http://localhost:8000/api/absensi/pegawai
+Content-Type: application/json
+
+{
+    "nama":"Elysia Dev",
+    "jkel":"PEREMPUAN",
+    "greenhouse":"District 1",
+    "jabatan":"Sekertaris"
+}
+
+### PUT /{id}
+PUT http://localhost:8000/api/absensi/pegawai/{id}
+Content-Type: application/json
+
+{
+    "nama":"Elysia Dev",
+    "jkel":"PEREMPUAN",
+    "greenhouse":"District 1",
+    "jabatan":"Sekertaris"
+}
+
+### DELETE /{id}
+DELETE http://localhost:8000/api/absensi/pegawai/{id}
+
+
+### ==== PERANGKAT IOT -> GREEN HOUSE
+
+### GET
+GET http://localhost:8000/api/greenhouse
+
+### PUT
+PUT http://localhost:8000/api/greenhouse
+Content-Type: application/json
+
+{
+    "nama":"Green House 1",
+    "alamat":"Jl. Mawar No 34, Kota Blitar",
+    "ukuran":"150",
+    "jenis_melon":"Melon Sankis",
+    "rata_suhu":"32.30",
+    "rata_kelembaban":"75",
+    "rata_intensitas_cahaya":"80"
+}
+
+### ===> SENSOR
+
+### GET
+GET http://localhost:8000/api/iot/sensor/{gh_id}/lastest
+Authorization: Bearer -- TOKEN --
+
+### GET
+GET http://localhost:8000/api/iot/sensor/{gh_id}/chart
+Authorization: Bearer -- TOKEN --
+
+### ===> SENSOR IOT API
+
+### POST
+POST http://localhost:8000/api/sensor
+Content-Type: application/json
+
+{
+    "perangkat_id":1,
+    "sensor_suhu":"30",
+    "sensor_kelembaban":"100",
+    "sensor_ldr":"1",
+    "sensor_tds":"100",
+    "sensor_waterflow":"100",
+    "sensor_volume":"90",
+    "keterangan":"--"
+}
+
+### GET
+GET http://localhost:8000/api/pompa/{perangkatId}
+
+### ===> DASHBOARD KEUANGAN
+
+### GET
+GET http://localhost:8000/api/keuangan/dashboard/{gh_id}/chart
+Authorization: Bearer -- token --
+
+### GET
+GET http://localhost:8000/api/keuangan/dashboard/{gh_id}/pie?panen={panen_id}
+Authorization: Bearer -- token --
+
+### GET
+GET http://localhost:8000/api/keuangan/dashboard/{gh_id}/laba
+Authorization: Bearer -- token --
